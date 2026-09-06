@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA fallback: save the requested URL and redirect to the app root.
+      sessionStorage.redirect = location.href;
+
+      var repoName = location.pathname.split('/')[1];
+      var base = repoName ? '/' + repoName + '/' : '/';
+
+      var meta = document.createElement('meta');
+      meta.setAttribute('http-equiv', 'refresh');
+      meta.setAttribute('content', '0;URL=' + base);
+      document.head.appendChild(meta);
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
